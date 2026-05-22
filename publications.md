@@ -11,7 +11,7 @@ classes: wide-tight
 ### Stronger jet, weaker storms: a mechanistic perspective on the Atlantic-Pacific storm paradox
 
 **Or Hadas**, Yohai Kaspi  
-*Nat. Commun.	*, 2026
+*Nat. Commun.*, 2026
 [DOI](https://www.nature.com/articles/s41467-026-71784-3)
 
 ---
