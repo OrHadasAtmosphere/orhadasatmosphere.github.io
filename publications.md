@@ -8,6 +8,14 @@ classes: wide-tight
 
 ## Fundamentals of midlatitude dynamics
 
+### Stronger jet, weaker storms: a mechanistic perspective on the Atlantic-Pacific storm paradox
+
+**Or Hadas**, Yohai Kaspi  
+*Nat. Commun.	*, 2026
+[DOI](https://www.nature.com/articles/s41467-026-71784-3)
+
+---
+
 ### A Lagrangian perspective on the growth of midlatitude storms
 
 **Or Hadas**, Yohai Kaspi  
