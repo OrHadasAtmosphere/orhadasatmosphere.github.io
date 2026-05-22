@@ -22,7 +22,7 @@ classes: wide-tight
       </p>
     </div>
     <div class="two-col-media">
-      <img src="{{ '/assets/img/research_ml.jpg' | relative_url }}" alt="Machine learning storms">
+      <img src="{{ '/assets/img/research_ml.pdf' | relative_url }}" alt="Machine learning storms">
     </div>
   </div>
 
