@@ -50,4 +50,4 @@ The equal-contribution designation for the dynamical-regimes preprint was suppli
 
 ## Contact address
 
-The contact address is decoded in the browser only when a visitor clicks “Reveal email.” Plain-text addresses and static mailto links are omitted from generated pages; visitors without JavaScript see an `[at]` / `[dot]` fallback. This deters basic scrapers, but sophisticated crawlers can still recover the address. Update the encoded character list in `assets/js/contact.js` and the noscript fallback in `scripts/build.py` together.
+The contact address is decoded in the browser only when a visitor clicks “Reveal email,” then displayed as `[at]` / `[dot]` text without creating a mailto link. Plain-text addresses and static mailto links are omitted from generated pages; visitors without JavaScript see an `[at]` / `[dot]` fallback. This deters basic scrapers, but sophisticated crawlers can still recover the address. Update the encoded character list in `assets/js/contact.js` and the noscript fallback in `scripts/build.py` together.

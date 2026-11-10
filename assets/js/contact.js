@@ -5,12 +5,12 @@
   document.querySelectorAll('[data-contact]').forEach((button) => {
     button.addEventListener('click', () => {
       const address = String.fromCharCode(...encoded.map((value) => value ^ 73));
-      const link = document.createElement('a');
-      link.className = 'email-reveal';
-      link.href = 'mailto:' + address;
-      link.textContent = address + ' ↗';
-      button.replaceWith(link);
-      link.focus();
+      const text = document.createElement('span');
+      text.className = 'email-address';
+      text.tabIndex = -1;
+      text.textContent = address.replace('@', ' [at] ').replaceAll('.', ' [dot] ');
+      button.replaceWith(text);
+      text.focus();
     }, { once: true });
   });
 })();
