@@ -46,3 +46,12 @@ for path,title,body,active,prefix in [('index.html','Atmospheric scientist',HOME
     target.parent.mkdir(parents=True,exist_ok=True)
     target.write_text(page(title,body,active,prefix))
     print('Built',path)
+
+# Help crawlers discover the public pages; omit artificial modification dates.
+site_url = 'https://orhadasatmosphere.github.io/'
+urls = [site_url + path for path in ['', 'research/', 'publications/']]
+(ROOT/'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?>\n'
+    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+    + ''.join(f'  <url><loc>{e(url)}</loc></url>\n' for url in urls)
+    + '</urlset>\n')
+(ROOT/'robots.txt').write_text('User-agent: *\nAllow: /\n\nSitemap: ' + site_url + 'sitemap.xml\n')
