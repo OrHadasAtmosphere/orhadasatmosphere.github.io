@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+github-checkout/
+website-update.patch
+.deploy-key/
