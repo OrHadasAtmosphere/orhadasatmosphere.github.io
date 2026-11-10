@@ -37,9 +37,9 @@ themes = [
     ),
     (
         'Global energy balance, storms & clouds',
-        'Cloud–circulation coupling',
-        'Storms organize clouds, and clouds modify the energy budget that sustains atmospheric circulation. I investigate how this coupling shapes planetary albedo, temperature gradients, and the seasonal cycle of storm tracks.',
-        'I combine observations, idealized simulations, and theoretical models to understand feedbacks among storms, clouds, and the ocean.'
+        'Storms bridge global climate and kilometer-scale clouds',
+        'Midlatitude clouds play a crucial role in Earth’s energy budget. I study their two-way interaction with atmospheric circulation: how storms regulate cloudiness, and how cloud radiative effects feed back on storm tracks.',
+        ''
     ),
     (
         'Atmosphere & ocean',
@@ -78,10 +78,11 @@ def research_links(urls):
     return '<div class="related-papers"><p class="eyebrow">Related papers</p><ul>' + ''.join(items) + '</ul></div>'
 
 for i, (eyebrow, title, p1, p2) in enumerate(themes, 1):
+    paragraphs = ''.join(f'<p>{e(text)}</p>' for text in (p1, p2) if text)
     RESEARCH += (
         f'<section class="theme"><span class="theme-number">{i:02}</span><div>'
         f'<p class="eyebrow">{e(eyebrow)}</p><h2>{e(title)}</h2>'
-        f'<p>{e(p1)}</p><p>{e(p2)}</p>{research_links(related_paper_urls[eyebrow])}</div></section>'
+        f'{paragraphs}{research_links(related_paper_urls[eyebrow])}</div></section>'
     )
 
 PUBLICATIONS=f'<section class="page-heading"><p class="eyebrow">Publications</p><h1>Papers &amp; preprints.</h1><p class="lead">Atmospheric dynamics, storm predictability, and the coupled climate system.</p><a class="text-link" href="{SCHOLAR}">Google Scholar profile ↗</a></section>'
