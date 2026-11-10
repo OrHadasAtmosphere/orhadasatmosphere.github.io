@@ -45,7 +45,7 @@ themes = [
         'Atmosphere & ocean',
         'Midlatitude climate through storm–ocean coupling',
         'Midlatitude storms and the ocean are locked in a two-way energetic coupling: oceanic temperature gradients fuel storms, while storms reshape those gradients by driving ocean circulation and mixing.',
-        'A major pathway in this coupling is the transfer of storm energy into oceanic near-inertial waves (NIWs). These waves help regulate sea surface cooling beneath storms and carry energy into the ocean interior, where they drive mixing and tracer transport. I study how storm structure, propagation, and life cycle control this energy transfer, connecting individual weather systems to the ocean’s response.'
+        'I aim to understand how this tightly coupled system evolves to shape the climate we observe, and how it may change in the future.'
     )
 ]
 # Use the shared publication records so titles and statuses stay consistent.
