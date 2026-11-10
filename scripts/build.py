@@ -32,8 +32,8 @@ themes = [
     (
         'Jets & storms',
         'Eddy–mean flow interaction, one storm at a time',
-        'I study midlatitude eddy–mean flow interactions through the life cycles of individual storms. Following their growth, propagation, and energy exchange helps connect the dynamics of individual weather systems to the larger-scale circulation.',
-        'I combine physical diagnostics with machine learning to distinguish the influence of the climate background from synoptic variability. This helps explain why stronger jets do not always produce stronger storms, quantify the predictability of storm intensity and trajectories, and clarify the challenges of attributing individual weather events to climate change.'
+        'I study how jet streams and individual storms interact to shape the midlatitude climate. Following storms through their life cycles offers a way to connect their growth and evolution to the large-scale flow, and to understand how storm-track patterns emerge from individual weather systems.',
+        'Machine learning provides a complementary way to ask how much of storm behavior is set by the climate background, and how much depends on the evolving synoptic flow. I use it to investigate the physical controls on storm variability and predictability.'
     ),
     (
         'Global energy balance, storms & clouds',
@@ -48,11 +48,40 @@ themes = [
         'A major pathway in this coupling is the transfer of storm energy into oceanic near-inertial waves (NIWs). These waves help regulate sea surface cooling beneath storms and carry energy into the ocean interior, where they drive mixing and tracer transport. I study how storm structure, propagation, and life cycle control this energy transfer, connecting individual weather systems to the ocean’s response.'
     )
 ]
+# Use the shared publication records so titles and statuses stay consistent.
+related_paper_urls = {
+    'Jets & storms': [
+        'https://www.nature.com/articles/s41467-026-71784-3',
+        'https://doi.org/10.1029/2024AV001555',
+        'https://doi.org/10.1175/JAS-D-20-0289.1',
+        'https://doi.org/10.1029/2025GL118496',
+        'https://doi.org/10.1029/2025GL118886',
+    ],
+    'Global energy balance, storms & clouds': [
+        'https://doi.org/10.1073/pnas.2208778120',
+        'https://arxiv.org/abs/2607.02213',
+        'https://doi.org/10.22541/essoar.15005264/v1',
+    ],
+    'Atmosphere & ocean': ['https://arxiv.org/abs/2609.16671'],
+}
+papers_by_url = {p['url']: p for p in PAPERS}
+
+def research_links(urls):
+    items = []
+    for url in urls:
+        p = papers_by_url[url]
+        status = f" · {p['status']}" if p['status'] != 'published' else ''
+        items.append(
+            f'<li><a href="{e(url, quote=True)}">{e(p["title"])}</a>'
+            f' <span>({p["year"]}{e(status)})</span></li>'
+        )
+    return '<div class="related-papers"><p class="eyebrow">Related papers</p><ul>' + ''.join(items) + '</ul></div>'
+
 for i, (eyebrow, title, p1, p2) in enumerate(themes, 1):
     RESEARCH += (
         f'<section class="theme"><span class="theme-number">{i:02}</span><div>'
         f'<p class="eyebrow">{e(eyebrow)}</p><h2>{e(title)}</h2>'
-        f'<p>{e(p1)}</p><p>{e(p2)}</p></div></section>'
+        f'<p>{e(p1)}</p><p>{e(p2)}</p>{research_links(related_paper_urls[eyebrow])}</div></section>'
     )
 
 PUBLICATIONS=f'<section class="page-heading"><p class="eyebrow">Publications</p><h1>Papers &amp; preprints.</h1><p class="lead">Atmospheric dynamics, storm predictability, and the coupled climate system.</p><a class="text-link" href="{SCHOLAR}">Google Scholar profile ↗</a></section>'

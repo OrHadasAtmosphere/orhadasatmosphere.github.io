@@ -6,3 +6,5 @@
 
 /* Email is revealed on demand instead of embedded as a mailto link. */
 .email-reveal{font:inherit;color:inherit;cursor:pointer;background:none;border:0;padding:0;text-decoration:underline;text-underline-offset:5px}.email-reveal:hover{color:var(--accent)}.email-reveal:focus-visible{outline:3px solid #b15c2b;outline-offset:6px}.footer-links .email-reveal{text-decoration:none}.contact-band .email-reveal{font-size:16px}
+
+.related-papers{margin-top:28px}.related-papers .eyebrow{margin-bottom:10px}.related-papers ul{margin:0;padding-left:19px;font-size:14px;line-height:1.6}.related-papers li{padding:4px 0}.related-papers li span{color:var(--muted);font-size:12px}
