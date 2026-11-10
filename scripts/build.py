@@ -44,8 +44,8 @@ themes = [
     (
         'Atmosphere & ocean',
         'Midlatitude climate through storm–ocean coupling',
-        'Midlatitude storms and the ocean are locked in a two-way energetic coupling: oceanic temperature gradients fuel storms, while storms reshape those gradients by driving ocean circulation and mixing.',
-        'I aim to understand how this tightly coupled system evolves to shape the climate we observe, and how it may change in the future.'
+        'Midlatitude storms and the ocean are locked in a two-way energetic coupling: oceanic temperature gradients fuel storms, while storms reshape those gradients by driving ocean circulation and mixing. I aim to understand how this tightly coupled system evolves to shape the climate we observe, and how it may change in the future.',
+        ''
     )
 ]
 # Use the shared publication records so titles and statuses stay consistent.
