@@ -41,7 +41,7 @@ for path,p in pages.items():
 papers=json.loads((ROOT/'_data/publications.json').read_text())
 assert len({p['url'] for p in papers})==len(papers),'Duplicate publications'
 for p in papers:
-    assert p['status'] in ['published','preprint']
+    assert p['status'] in ['published','preprint','report']
     assert p['url'].startswith('https://')
     assert p['url']!='https://doi.org/10.1029/20'
 assert (ROOT/'.nojekyll').exists()

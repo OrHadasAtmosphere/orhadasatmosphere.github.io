@@ -7,7 +7,7 @@ Academic website for Or Hadas, Hess Postdoctoral Fellow at Princeton University 
 A static GitHub Pages site with no third-party build dependencies. `.nojekyll` tells GitHub Pages to serve the committed HTML directly.
 
 - Edit biography, research text, and shared layout in `scripts/build.py`.
-- Edit papers in `_data/publications.json`. Set `status` to `preprint` or `published`.
+- Edit papers in `_data/publications.json`. Set `status` to `preprint`, `published`, or `report`.
 - Edit visual styles in `assets/css/custom.css`.
 - Replace the portrait at `assets/img/20176F053.jpg` or the CV at `assets/files/CV_Or_Hadas.pdf` as needed. The existing CV is preserved unchanged.
 
@@ -39,3 +39,11 @@ Current role and supervisor were supplied by Or Hadas. Existing journal publicat
 - https://doi.org/10.1038/s41467-026-71784-3
 
 Google Scholar: https://scholar.google.com/citations?user=gYHd_jcAAAAJ&sortby=pubdate . Direct profile access was unavailable during the update, so the list was checked against the primary records above.
+
+Additional publication sources:
+
+- https://doi.org/10.22541/essoar.15005264/v1
+- https://mpimet.mpg.de/en/staff/franziska-glassmeier
+- https://doi.org/10.17617/2.3711842
+
+The equal-contribution designation for the dynamical-regimes preprint was supplied by Or Hadas.
