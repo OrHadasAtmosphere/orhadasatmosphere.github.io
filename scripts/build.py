@@ -27,14 +27,33 @@ HOME = '''<section class="hero"><div class="hero-copy"><p class="eyebrow">Prince
 HOME += '<section class="section"><div class="section-heading"><div><p class="eyebrow">Latest work</p><h2>Recent preprints</h2></div><a class="text-link" href="publications/">All publications →</a></div>'+''.join(paper(p) for p in PAPERS if p['status']=='preprint')+'</section>'
 HOME += '<section class="contact-band"><h2>Get in touch</h2><button class="email-reveal" type="button" data-contact>Reveal email ↗</button></section>'
 
-RESEARCH = '''<section class="page-heading"><p class="eyebrow">Research</p><h1>Understanding the atmosphere<br>through its storms.</h1><p class="lead">Physical mechanisms, individual weather systems, and the climate they create together.</p></section>'''
+RESEARCH = '''<section class="page-heading"><p class="eyebrow">Research</p><h1>How does it all connect?</h1><p class="lead">The climate system emerges from interactions among components, each with its own spatial and temporal scales and distinct dynamical behavior. I want to understand how it all fits together.</p></section>'''
 themes = [
-('Storms & jets','Fundamentals of midlatitude dynamics', 'I study how baroclinic instability, jet structure, and eddy–mean flow interactions govern storm growth. Following individual storms helps connect their energy conversion and propagation to the time-averaged circulation.', 'My work explores why stronger jets do not always produce stronger storms, and how a storm’s path through its environment controls its development.', 'Stronger jet, weaker storms','https://doi.org/10.1038/s41467-026-71784-3'),
-('Clouds & radiation','Cloud–circulation coupling','Storms organize clouds, and clouds modify the energy budget that sustains atmospheric circulation. I investigate how this coupling shapes planetary albedo, temperature gradients, and the seasonal cycle of storm tracks.','I combine observations, idealized simulations, and theoretical models to understand feedbacks among storms, clouds, and the ocean.','Midlatitude cloud radiative effects reinforce storm tracks on seasonal timescales','https://arxiv.org/abs/2607.02213'),
-('Machine learning & predictability','Separating climate from weather','How much does the climate background tell us about an individual storm? I use machine learning alongside physical diagnostics to distinguish the influence of climatic conditions from synoptic variability.','This approach helps quantify the predictability of storm intensity and trajectories, and clarifies the challenges of attributing individual weather events to climate change.','Quantifying climate’s influence on storm activity','https://doi.org/10.1029/2025GL118496'),
-('Atmosphere & ocean','Storm-driven near-inertial waves','Extratropical storms transfer energy to the ocean through wind stress. My recent work examines near-inertial wave generation from a storm-centered perspective, linking storm structure, propagation, and life cycle to the ocean’s response.','','Midlatitude near-inertial wave generation','https://arxiv.org/abs/2609.16671')]
-for i,(eyebrow,title,p1,p2,label,url) in enumerate(themes,1):
-    RESEARCH += f'<section class="theme"><span class="theme-number">{i:02}</span><div><p class="eyebrow">{e(eyebrow)}</p><h2>{e(title)}</h2><p>{e(p1)}</p>'+ (f'<p>{e(p2)}</p>' if p2 else '') + f'<a class="text-link" href="{url}">Read: {e(label)} ↗</a></div></section>'
+    (
+        'Jets & storms',
+        'Eddy–mean flow interaction, one storm at a time',
+        'I study midlatitude eddy–mean flow interactions through the life cycles of individual storms. Following their growth, propagation, and energy exchange helps connect the dynamics of individual weather systems to the larger-scale circulation.',
+        'I combine physical diagnostics with machine learning to distinguish the influence of the climate background from synoptic variability. This helps explain why stronger jets do not always produce stronger storms, quantify the predictability of storm intensity and trajectories, and clarify the challenges of attributing individual weather events to climate change.'
+    ),
+    (
+        'Global energy balance, storms & clouds',
+        'Cloud–circulation coupling',
+        'Storms organize clouds, and clouds modify the energy budget that sustains atmospheric circulation. I investigate how this coupling shapes planetary albedo, temperature gradients, and the seasonal cycle of storm tracks.',
+        'I combine observations, idealized simulations, and theoretical models to understand feedbacks among storms, clouds, and the ocean.'
+    ),
+    (
+        'Atmosphere & ocean',
+        'Midlatitude climate through storm–ocean coupling',
+        'Midlatitude storms and the ocean are locked in a two-way energetic coupling: oceanic temperature gradients fuel storms, while storms reshape those gradients by driving ocean circulation and mixing.',
+        'A major pathway in this coupling is the transfer of storm energy into oceanic near-inertial waves (NIWs). These waves help regulate sea surface cooling beneath storms and carry energy into the ocean interior, where they drive mixing and tracer transport. I study how storm structure, propagation, and life cycle control this energy transfer, connecting individual weather systems to the ocean’s response.'
+    )
+]
+for i, (eyebrow, title, p1, p2) in enumerate(themes, 1):
+    RESEARCH += (
+        f'<section class="theme"><span class="theme-number">{i:02}</span><div>'
+        f'<p class="eyebrow">{e(eyebrow)}</p><h2>{e(title)}</h2>'
+        f'<p>{e(p1)}</p><p>{e(p2)}</p></div></section>'
+    )
 
 PUBLICATIONS=f'<section class="page-heading"><p class="eyebrow">Publications</p><h1>Papers &amp; preprints.</h1><p class="lead">Atmospheric dynamics, storm predictability, and the coupled climate system.</p><a class="text-link" href="{SCHOLAR}">Google Scholar profile ↗</a></section>'
 for status,label in [('preprint','Preprints'),('published','Peer-reviewed publications'),('report','Reports')]:
