@@ -15,10 +15,11 @@ def paper(p):
 def page(title,body,active,prefix):
     nav = ''.join(f'<a href="{prefix}{path}"'+(' aria-current="page"' if active==name else '')+f'>{name}</a>' for name,path in [('About',''),('Research','research/'),('Publications','publications/')])
     canonical='https://orhadasatmosphere.github.io/'+('' if active=='About' else active.lower()+'/')
+    document_title = 'Or Hadas - Homepage' if active == 'About' else f'{title} · Or Hadas'
     return f'''<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{e(title)} · Or Hadas</title><meta name="description" content="Or Hadas, Hess Postdoctoral Fellow at Princeton University. Research on atmospheric dynamics, midlatitude storms, clouds, and climate.">
-<meta name="theme-color" content="#f7f5ef"><link rel="canonical" href="{canonical}"><meta property="og:title" content="{e(title)} · Or Hadas"><meta property="og:type" content="website"><meta property="og:url" content="{canonical}"><meta property="og:description" content="Atmospheric dynamics, storms, clouds, and climate. Hess Postdoctoral Fellow at Princeton University.">
+<title>{e(document_title)}</title><meta name="description" content="Or Hadas, Hess Postdoctoral Fellow at Princeton University. Research on atmospheric dynamics, midlatitude storms, clouds, and climate.">
+<meta name="theme-color" content="#f7f5ef"><link rel="canonical" href="{canonical}"><meta property="og:title" content="{e(document_title)}"><meta property="og:type" content="website"><meta property="og:url" content="{canonical}"><meta property="og:description" content="Atmospheric dynamics, storms, clouds, and climate. Hess Postdoctoral Fellow at Princeton University.">
 <link rel="icon" href="{prefix}assets/img/mark.svg" type="image/svg+xml"><link rel="stylesheet" href="{prefix}assets/css/custom.css"></head>
 <body><a class="skip" href="#main">Skip to content</a><header class="site-header"><a class="wordmark" href="{prefix}">Or Hadas<span>Atmospheric scientist</span></a><nav aria-label="Main navigation">{nav}<a class="cv-link" href="{prefix}assets/files/CV_Or_Hadas.pdf">CV ↗</a></nav></header>
 <main id="main">{body}</main><footer><div><strong>Or Hadas</strong><p>Department of Geosciences · Princeton University</p></div><div class="footer-links"><button class="email-reveal" type="button" data-contact>Reveal email ↗</button><noscript>Email: oh0815 [at] princeton [dot] edu</noscript><a href="{SCHOLAR}">Google Scholar ↗</a><a href="https://orcid.org/0000-0001-9360-2999">ORCID ↗</a><a href="https://www.linkedin.com/in/or-hadas-214048193/">LinkedIn ↗</a></div></footer><script src="{prefix}assets/js/contact.js" defer></script></body></html>'''
